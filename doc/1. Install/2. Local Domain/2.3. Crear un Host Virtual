@@ -32,10 +32,10 @@ abrimos el archivo
 
 Agregamos al final del archivo
 <VirtualHost *:80>
-   DocumentRoot "C:\AppServ\www\Udemy\Laravel5\public"
+   DocumentRoot "C:\AppServ\www\dev\blogklvst3r\public"
     ServerName klvst3r.io
     ServerAlias www.klvst3r.io
-    <Directory "C:\AppServ\www\Udemy\Laravel5\public/">
+    <Directory "C:\AppServ\www\dev\blogklvst3r\public/">
       Options Indexes FollowSymLinks
       AllowOverride All
       Order Deny, Allow
@@ -54,7 +54,7 @@ Descomentamos
     LoadModule rewrite_module modules/mod_rewrite.so
 
 Agregamos estas lineas al final
-    <Directory «C:/AppServ/www/Udemy/Laravel5/public»>
+    <Directory «C:/AppServ/www/dev/blogklvst3r/public»>
         Options FollowSymLinks
         AllowOverride All
         Order deny,allow
@@ -82,7 +82,7 @@ En Mac seria en
 
 Abrimos como administrador el archivo "host"
 
-127.0.0.1	laravel.klvst3r.io
+127.0.0.1	laravel.blogklvst3r.io
 
 Reiniciamos el servicio de Apache
 
@@ -108,7 +108,7 @@ exit;
 ?>
 
 Ahora cada que apuntemos a 
-    klvst3r.io
+    blogklvst3r.io
 
 Nos llevara al proyecto principal en desarrollo
 
@@ -152,12 +152,12 @@ Requisitos
 3. Generamos el siguiente contenido
 
 		<VirtualHost *:80>
-		    ServerName klvst3r.io
+		    ServerName blogklvst3r.io
 
 		    ServerAdmin admin@klvst3r.io
-		    DocumentRoot /var/www/html/dev/laravel/public
+		    DocumentRoot /var/www/html/dev/blogklvst3r/public
 
-		    <Directory /var/www/html/dev/laravel/public/>
+		    <Directory /var/www/html/dev/blogklvst3r/public/>
 		    Options Indexes MultiViews
 		    AllowOverride None
 		    Require all granted
@@ -168,7 +168,7 @@ Requisitos
 		</VirtualHost>
 	
 4. Guardamos y habilitamos el nuevo host virtual
-			sudo a2ensite klvst3r.io.conf
+			sudo a2ensite blogklvst3r.io.conf
 
 5. Reiniciamos el servidor Web
 			sudo systemctl restart spache2
@@ -183,7 +183,7 @@ Requisitos
 	Quedará algo como esto:	
 
 
-			127.0.0.1 	klvst3r.io
+			127.0.0.1 	blogklvst3r.io
 			127.0.0.1	localhost
 			127.0.1.1	klvst3r.ipv6.infinitum.net.mx	klvst3r
 
