@@ -136,7 +136,7 @@ Reinicie el apache2servicio para que los cambios surtan efecto:
 Para verificar que todo funciona como se esperaba, abre http://example.comen tu navegador favorito y verás algo como esto:
 
 
-Configurando el dominio "blogklvst3r.io"
+Configurando el dominio "blogklvst3r.io" - Configuración real funcional
 --------------------------------------
 
 Siguiendo el ejemplo anterior, vamos a configurar nuestro dominio local de la siguiente manera:
@@ -162,25 +162,26 @@ Podemos crear un archivo de configuración de nuestro host virtual de la siguien
 
 El contenido del archivo sera como se muestra en las siguientes directivas:
 
+==========================================================================
+	---
+		<VirtualHost *:80>
+			ServerName blogklvst3r.io
 
----
-	<VirtualHost *:80>
-    ServerName blogklvst3r.io
+			ServerAdmin admin@klvst3r.io
+			DocumentRoot /var/www/html/dev/blogKlvst3r/public
 
-    ServerAdmin admin@klvst3r.io
-    DocumentRoot /var/www/html/dev/blogklvst3r/public
+			<Directory /var/www/html/dev/blogKlvst3r/public/>
+				Options Indexes FollowSymLinks MultiViews
+				AllowOverride All
+				Require all granted
+			</Directory>
 
-    <Directory /var/www/html/dev/blogklvst3r/public/>
-    Options Indexes MultiViews
-    AllowOverride None
-    Require all granted
-    </Directory>
+			ErrorLog ${APACHE_LOG_DIR}/error.log
+			CustomLog ${APACHE_LOG_DIR}/access.log combined
+		</VirtualHost>
+	---
 
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
----
-
+==========================================================================
 
 4. Guardamos y habilitamos el nuevo host virtual
 			sudo a2ensite blogklvst3r.io.conf
