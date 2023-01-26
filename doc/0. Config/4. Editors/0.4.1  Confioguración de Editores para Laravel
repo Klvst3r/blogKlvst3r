@@ -113,3 +113,9 @@ Configurar	Key Bindings en Sublime Text
       { "keys": ["ctrl+shift+7"], "command": "toggle_comment", "args": { "block": true } },
 ]
 
+
+
+Para Visual Studio code
+
+En archivo
+
